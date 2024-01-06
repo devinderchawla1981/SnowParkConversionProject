@@ -1,0 +1,9 @@
+create or replace procedure droolsudf() returns integer
+language scala
+runtime_version = '2.12'
+imports =('@UDF_STAGE/SnowparkScalaDrools-1.0-SNAPSHOT-FAT.jar')
+handler = 'com.drools.App.mainMethod'
+packages = ('com.snowflake:snowpark:latest');
+ 
+ 
+call droolsudf();
